@@ -115,7 +115,7 @@ func (h *agentTraceWriter) flush() {
 				}
 				return
 			}
-			log.Error("failure sending traces (attempt %d), will retry: %v", attempt+1, err)
+			log.Debug("failure sending traces (attempt %d), will retry: %v", attempt+1, err)
 			p.reset()
 			time.Sleep(time.Millisecond)
 		}

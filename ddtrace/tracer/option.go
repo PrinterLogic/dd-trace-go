@@ -223,6 +223,10 @@ func newConfig(opts ...StartOption) *config {
 	for _, fn := range opts {
 		fn(c)
 	}
+	if c.sendRetries == 0 {
+		// retry sending traces up to 5 times by default
+		c.sendRetries = 5
+	}
 	if c.agentURL == nil {
 		c.agentURL = resolveAgentAddr()
 		if url := internal.AgentURLFromEnv(); url != nil {
