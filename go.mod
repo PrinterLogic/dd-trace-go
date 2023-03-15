@@ -224,5 +224,3 @@ require (
 	github.com/DataDog/go-tuf v0.3.0--fix-localmeta-fork // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 )
-
-replace gopkg.in/DataDog/dd-trace-go.v1 => github.com/PrinterLogic/dd-trace-go main
